@@ -1,13 +1,10 @@
 .container-beachlist{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-top: 20px;
 }
 
-.beach-list{
-    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.051);
-
-}
 
 .filter-grid{
     display: flex;
@@ -67,26 +64,6 @@
     }
 }
 
-/* @media (max-width: 1010px){
-    .filter{
-        flex-direction: column;
-    }
-
-    .filter p{
-        align-self: self-start;
-    }
-
-    button{
-        align-self: center;
-    }
-}
-
-@media (max-width: 730px){
-    .check-list{
-        grid-template-columns: 1fr;
-    }
-} */
-
 @media (max-width: 1200px) and (min-width: 750px){
     .filter-grid{
         width: 80%;
@@ -106,4 +83,48 @@
         grid-template-columns: 1fr;
     }
 }
+
+.beach-list{
+    color: #434343;
+}
+
+.beach-list h2{
+    font-size: 2.5em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.beach-item{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 25px;  
+    margin-bottom: 10px;
+}
+
+.learn-more{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.learn-more span{
+    background-color: #D9D9D9;
+    padding: 5px;
+    font-size: 16px;
+}
+
+
+.info{
+    display: flex;
+    align-items: center;
+    width: 20px;
+    margin-left: 5px;
+}
+
+.info-img{
+    width: 100%;
+}
+
+
 

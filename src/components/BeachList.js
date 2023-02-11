@@ -1,5 +1,6 @@
 import React from "react";
 import './BeachList.css'
+import info from '../assets/info.png'
 
 const BeachList = () => {
 
@@ -30,6 +31,38 @@ const BeachList = () => {
                 </div>
 
                 <button>Filtrar</button>
+            </div>
+
+            <div className="beach-list">
+                <h2>Praias de Florianópolis</h2>
+
+                <div className="beach-item">
+                    <p>Daniela</p>
+                    <div className="learn-more">
+                        <span>saber mais</span>
+                        <div className="info">
+                        <img className="info-img" src={info}></img>
+                        </div>
+                    </div>
+                </div>
+                <div className="beach-item">
+                    <p>Santinho</p>
+                    <div className="learn-more">
+                        <span>saber mais</span>
+                        <div className="info">
+                        <img className="info-img" src={info}></img>
+                        </div>
+                    </div>
+                </div>
+                <div className="beach-item">
+                    <p>Ingleses</p>
+                    <div className="learn-more">
+                        <span>saber mais</span>
+                        <div className="info">
+                        <img className="info-img" src={info}></img>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )
