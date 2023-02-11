@@ -64,6 +64,11 @@ const BeachList = () => {
                     </div>
                 </div>
             </div>
+
+            <div className="add-beach">
+                <p>Você conhece mais alguma praia que não está listada acima?</p>
+                <button className="btn-add">Adicionar</button>
+            </div>
         </div>
     )
 }

@@ -14,6 +14,7 @@
     padding: 20px;
     width: 50%;
     border-radius: 20px;
+    box-shadow: 2px 1px 5px 2px rgba(0, 0, 0, 0.104);
 
 }
 
@@ -49,6 +50,78 @@
     display: flex;
 }
 
+
+
+.beach-list{
+    color: #002844;
+}
+
+.beach-list h2{
+    color: #002844;
+    font-size: 2.5em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.beach-item{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 25px;  
+    margin-bottom: 10px;
+}
+
+.learn-more{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.learn-more span{
+    background-color: #0388A6;
+    padding: 6px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+}
+
+
+.info{
+    display: flex;
+    align-items: center;
+    width: 20px;
+    margin-left: 5px;
+}
+
+.info-img{
+    width: 100%;
+}
+
+.add-beach{
+    padding: 15px;
+    width: 50%;
+    background-color: #00284479;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.add-beach p{
+    font-size: 18px;
+    color: white;
+}
+
+.add-beach button{
+    background-color: #0388A6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
 @media (max-width: 1375px) and (min-width: 0px){
 
     .filter{
@@ -69,6 +142,9 @@
         width: 80%;
     }
 
+    .add-beach{
+        width: 80%;
+    }
 
 }
 
@@ -78,53 +154,30 @@
         font-size: 16px;
     }
 
+    .add-beach{
+        width: 90%;
+    }
+
     .check-list{
         display: grid;
         grid-template-columns: 1fr;
     }
-}
 
-.beach-list{
-    color: #434343;
-}
+    .beach-list h2{
+        font-size: 2em;
+        
+    }
 
-.beach-list h2{
-    font-size: 2.5em;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
+    .beach-item p{
+        font-size: 22px;
+    }
 
-.beach-item{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 25px;  
-    margin-bottom: 10px;
-}
-
-.learn-more{
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.learn-more span{
-    background-color: #D9D9D9;
-    padding: 5px;
-    font-size: 16px;
+    .beach-item span{
+        font-size: 16px;
+    }
 }
 
 
-.info{
-    display: flex;
-    align-items: center;
-    width: 20px;
-    margin-left: 5px;
-}
-
-.info-img{
-    width: 100%;
-}
 
 
 
