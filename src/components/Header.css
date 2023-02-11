@@ -1,0 +1,55 @@
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0388A6;
+    padding: 30px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 2px 1px 5px 2px rgba(0, 0, 0, 0.104);
+}
+
+.title p{
+    color: white;
+    margin-bottom: 2px;
+    padding: 0px 10px;
+}
+
+.title h1{
+    color: white;
+    font-size: 4em;
+    background-color: #00C7FF;
+    padding: 5px 20px;
+}
+
+@media (orientation: portrait){
+    .title h1{
+        margin-left: 20px;
+        font-size: 3em;
+        padding: 5px 20px;
+    }
+
+    .title p{
+        padding: 0px 20px;
+    }
+}
+
+@media (max-width: 695px){
+    .title h1{
+        font-size: 2em;
+        text-align: center;
+        padding: 0;
+    }
+
+    .title p{
+        font-size: 10px;
+    }
+}
+
+
+.img-coconut-tree{
+    max-width: 350px;
+}
+
+.img-coconut-tree img{
+    width: 100%;
+}
