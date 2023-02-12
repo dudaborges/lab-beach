@@ -7,14 +7,12 @@
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
-    margin-top: 20px;
-    
+    background-size: cover;    
 }
 
 .paragraph{
     color: white;
-    background-color: #002844;
+    background-color: #0388A6;
     width: 50%;
     text-align: justify;
     padding: 30px;
