@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './BeachList.css'
 import info from '../assets/info.png'
 
-const BeachList = () => {
+const BeachList = (props) => {
 
     return(
         <div className="container-beachlist">
@@ -39,7 +39,7 @@ const BeachList = () => {
                 <div className="beach-item">
                     <p>Daniela</p>
                     <div className="learn-more">
-                        <span>saber mais</span>
+                        <span onClick={() => props.show(true)}>saber mais</span>
                         <div className="info">
                         <img className="info-img" src={info}></img>
                         </div>
