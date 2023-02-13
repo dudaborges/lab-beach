@@ -8,42 +8,17 @@ function AddBeach(props) {
     const [status, setStatus] = useState('')
     const [suitable, setSuitable] = useState('')
 
-    const handleChangeName = (event) => {
-
-
-        setName(event.target.value)
-    }
-    const handleChangeArea = (event) => {
-
-
-        setArea(event.target.value)
-    }
-
-    const handleChangeStatus = (event) => {
-
-
-        setStatus(event.target.value)
-
-    }
-
-    const handleChangeSuitable = (event) => {
-
-        setSuitable(event.target.value)
-
-    }
 
     const handleAddBeach = () => {
 
         const beach = [{
             nome: name,
             bairro: area,
-            status: status,
-            acessibilidade: suitable
+            status: suitable,
+            acessibilidade: status
         }]
 
         localStorage.setItem('itens', JSON.stringify(beach))
-
-        
 
     }
 
@@ -58,19 +33,21 @@ function AddBeach(props) {
             <div className='inputs-add'>
                 <label className='input-add name-input'>
                     <span>Nome:</span>
-                    <input type="text" className='input-popup' value={name} onChange={handleChangeName} />
+                    <input type="text" className='input-popup' value={name} onChange={(event) => setName(event.target.value)} />
                 </label>
                 <label className='input-add zone-input'>
                     <span>Bairro:</span>
-                    <input type="text" className="input-popup" value={area} onChange={handleChangeArea} />
+                    <input type="text" className="input-popup" value={area} onChange={(event) => setArea(event.target.value)} />
                 </label>
                 <div className='status-input'>
                     <span>Status:</span>
 
                     <div>
-                    <input onClick={handleChangeSuitable} type="radio" id='suitable' name={status} value="Própria para Banho" />
+                    <input onClick={(event) =>         setSuitable(event.target.value)
+                    } type="radio" id='suitable' name={suitable} value="Própria para Banho" />
                     <label for="suitable">Própria</label>
-                    <input onClick={handleChangeSuitable}  type="radio" id="not-suitable" name={status} value="Imprópria para Banho" />
+                    <input onClick={(event) =>         setSuitable(event.target.value)
+                    }  type="radio" id="not-suitable" name={suitable} value="Imprópria para Banho" />
                     <label for="not-suitable">Imprópria</label>
                     </div>
                 </div>
@@ -79,9 +56,11 @@ function AddBeach(props) {
                     <span>Acessível:</span>
 
                     <div>
-                    <input onClick={handleChangeStatus} type="radio" id="yes" name={suitable} value="Acessível" />
+                    <input onClick={(event) => {        setStatus(event.target.value)
+                    }} type="radio" id="yes" name={status} value="Acessível" />
                     <label for="yes">Sim</label>
-                    <input onClick={handleChangeStatus} type="radio" id="no" name={suitable} value="Não Acessível" />
+                    <input onClick={(event) => {        setStatus(event.target.value)
+                    }} type="radio" id="no" name={status} value="Não Acessível" />
                     <label for="no">Não</label>
                     </div>
                 </div>
