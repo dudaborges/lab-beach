@@ -14,13 +14,10 @@ function App() {
     <div>
       <Header />
       <Introduction />
-      <BeachList show={setShowPopupEdit} />
+      <BeachList showedit={setShowPopupEdit} show={setShowPopup} />
       <AddBeach trigger={showPopup} setTrigger={setShowPopup} />
       <EditBeach trigger={showPopupEdit} setTrigger={setShowPopupEdit} />
-      <div className="add-beach">
-          <p>Você conhece mais alguma praia que não está listada acima?</p>
-          <button onClick={() => setShowPopup(true)} className="btn-show-popup">Adicionar</button>
-      </div>
+
 
     </div>
   );

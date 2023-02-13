@@ -39,7 +39,7 @@ const BeachList = (props) => {
                 <div className="beach-item">
                     <p>Daniela</p>
                     <div className="learn-more">
-                        <span onClick={() => props.show(true)}>saber mais</span>
+                        <span onClick={() => props.showedit(true)}>saber mais</span>
                         <div className="info">
                         <img className="info-img" src={info}></img>
                         </div>
@@ -63,6 +63,11 @@ const BeachList = (props) => {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div className="add-beach">
+            <p>Você conhece mais alguma praia que não está listada acima?</p>
+            <button onClick={() => props.show(true)} className="btn-show-popup">Adicionar</button>
             </div>
 
 

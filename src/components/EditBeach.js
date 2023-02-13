@@ -40,7 +40,8 @@ function EditBeach(props) {
             </div>
 
             <div className='btn-add'>
-                <button className='btn'>Inserir</button>
+                <button className='btn'>Alterar</button>
+                <button className='btn delete'>Excluir</button>
                 <button className='btn' onClick={() => props.setTrigger(false)}>fechar</button>
             </div>
             {props.children}
