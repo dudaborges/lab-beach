@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './AddBeach.css'
 
 function AddBeach(props) {
@@ -7,6 +7,7 @@ function AddBeach(props) {
     const [area, setArea] = useState('')
     const [status, setStatus] = useState('')
     const [suitable, setSuitable] = useState('')
+    const [currentBeach, setCurrentBeach] = useState('')
 
 
     const handleAddBeach = () => {
@@ -18,9 +19,18 @@ function AddBeach(props) {
             acessibilidade: status
         }]
 
-        localStorage.setItem('itens', JSON.stringify(beach))
+        localStorage.setItem('itens', JSON.stringify([...currentBeach, ...beach]))
+
+        setName('')
+        setArea('')
+
+        props.setTrigger(false)
 
     }
+
+    useEffect(() =>{
+        setCurrentBeach(JSON.parse(localStorage.getItem('itens')))
+    }, [])
 
     console.log(name)
 
