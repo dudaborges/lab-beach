@@ -10,11 +10,11 @@ function EditBeach(props) {
             <div className='inputs-add'>
                 <label className='input-add name-input'>
                     <span>Nome:</span>
-                    <input type="text" className='input-popup' value="nome da praia" />
+                    <input type="text" className='input-popup' value="Daniela" />
                 </label>
                 <label className='input-add zone-input'>
                     <span>Bairro:</span>
-                    <input type="text" className="input-popup" value="nome do bairro" />
+                    <input type="text" className="input-popup" value="Daniela" />
                 </label>
                 <div className='status-input'>
                     <span>Status:</span>
