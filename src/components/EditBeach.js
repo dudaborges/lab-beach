@@ -10,20 +10,20 @@ function EditBeach(props) {
             <div className='inputs-add'>
                 <label className='input-add name-input'>
                     <span>Nome:</span>
-                    <input type="text" className='input-popup' value="nome da praia" />
+                    <input type="text" className='input-popup' value="Daniela" />
                 </label>
                 <label className='input-add zone-input'>
                     <span>Bairro:</span>
-                    <input type="text" className="input-popup" value="nome do bairro" />
+                    <input type="text" className="input-popup" value="Daniela" />
                 </label>
                 <div className='status-input'>
                     <span>Status:</span>
 
                     <div>
                     <input type="radio" id='suitable' name='status' />
-                    <label for="suitable">Própria</label>
+                    <label htmlFor="suitable">Própria</label>
                     <input type="radio" id="not-suitable" name='status' />
-                    <label for="not-suitable">Imprópria</label>
+                    <label htmlFor="not-suitable">Imprópria</label>
                     </div>
                 </div>
 
@@ -32,9 +32,9 @@ function EditBeach(props) {
 
                     <div>
                     <input type="radio" id="yes" name="yer-or-no" value="yes" />
-                    <label for="yes">Sim</label>
+                    <label htmlFor="yes">Sim</label>
                     <input type="radio" id="no" name="yer-or-no" value="no" />
-                    <label for="no">Não</label>
+                    <label htmlFor="no">Não</label>
                     </div>
                 </div>
             </div>

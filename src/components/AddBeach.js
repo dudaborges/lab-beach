@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './AddBeach.css'
 
 function AddBeach(props) {
@@ -7,37 +7,42 @@ function AddBeach(props) {
     const [area, setArea] = useState('')
     const [status, setStatus] = useState('')
     const [suitable, setSuitable] = useState('')
+    const [beach, setBeach] = useState([])
+    const [currentBeach, setCurrentBeach] = useState([])
+
+    useEffect(() => {
+        const currentBeach = (localStorage.hasOwnProperty('beach')) ? JSON.parse(localStorage.getItem('beach')) : []
+        setCurrentBeach(currentBeach)
+    }, [])
 
 
-    const handleAddBeach = () => {
+    const handleAddBeach = e => {
+        e.preventDefault()
+        
+        setBeach([...beach])
+        localStorage.setItem("beach", JSON.stringify([...currentBeach, ...beach]))
+        const event = new Event('localStorageUpdated')
+        document.dispatchEvent(event)
 
-        const beach = [{
-            nome: name,
-            bairro: area,
-            status: suitable,
-            acessibilidade: status
-        }]
-
-        localStorage.setItem('itens', JSON.stringify(beach))
-
+        setName('')
+        setArea('')
+        props.setTrigger(false)
     }
-
-    console.log(name)
 
 
   return (props.trigger) ? (
     <div className='container-addbeach'>
-        <div className='addbeach'>
+        <form className='addbeach' onSubmit={handleAddBeach}>
             <h3 className='title-popup'>Cadastrar uma nova praia</h3>
 
             <div className='inputs-add'>
                 <label className='input-add name-input'>
                     <span>Nome:</span>
-                    <input type="text" className='input-popup' value={name} onChange={(event) => setName(event.target.value)} />
+                    <input type="text" name="name" className='input-popup' value={name} onChange={(event) => setName(event.target.value)} />
                 </label>
                 <label className='input-add zone-input'>
                     <span>Bairro:</span>
-                    <input type="text" className="input-popup" value={area} onChange={(event) => setArea(event.target.value)} />
+                    <input type="text" name="area" className="input-popup" value={area} onChange={(event) => setArea(event.target.value)} />
                 </label>
                 <div className='status-input'>
                     <span>Status:</span>
@@ -45,10 +50,10 @@ function AddBeach(props) {
                     <div>
                     <input onClick={(event) =>         setSuitable(event.target.value)
                     } type="radio" id='suitable' name={suitable} value="Própria para Banho" />
-                    <label for="suitable">Própria</label>
+                    <label htmlFor="suitable">Própria</label>
                     <input onClick={(event) =>         setSuitable(event.target.value)
                     }  type="radio" id="not-suitable" name={suitable} value="Imprópria para Banho" />
-                    <label for="not-suitable">Imprópria</label>
+                    <label htmlFor="not-suitable">Imprópria</label>
                     </div>
                 </div>
 
@@ -58,20 +63,20 @@ function AddBeach(props) {
                     <div>
                     <input onClick={(event) => {        setStatus(event.target.value)
                     }} type="radio" id="yes" name={status} value="Acessível" />
-                    <label for="yes">Sim</label>
+                    <label htmlFor="yes">Sim</label>
                     <input onClick={(event) => {        setStatus(event.target.value)
                     }} type="radio" id="no" name={status} value="Não Acessível" />
-                    <label for="no">Não</label>
+                    <label htmlFor="no">Não</label>
                     </div>
                 </div>
             </div>
 
             <div className='btn-add'>
-                <button type='submit' className='btn' onClick={handleAddBeach}>Inserir</button>
+                <button type='submit' className='btn'>Inserir</button>
                 <button className='btn' onClick={() => props.setTrigger(false)}>fechar</button>
             </div>
             {props.children}
-        </div>
+        </form>
     </div>
   ) : ""
 }
