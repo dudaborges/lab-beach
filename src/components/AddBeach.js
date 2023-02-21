@@ -7,13 +7,6 @@ function AddBeach(props) {
     const [area, setArea] = useState('')
     const [status, setStatus] = useState('')
     const [suitable, setSuitable] = useState('')
-    const [beach, setBeach] = useState([])
-    const [currentBeach, setCurrentBeach] = useState([])
-
-    useEffect(() => {
-        const currentBeach = (localStorage.hasOwnProperty('beach')) ? JSON.parse(localStorage.getItem('beach')) : []
-        setCurrentBeach(currentBeach)
-    }, [])
 
 
     const handleAddBeach = e => {
@@ -24,10 +17,13 @@ function AddBeach(props) {
         const event = new Event('localStorageUpdated')
         document.dispatchEvent(event)
 
-        setName('')
-        setArea('')
-        props.setTrigger(false)
+        localStorage.setItem('itens', JSON.stringify(beach))
+
     }
+
+    useEffect(() =>{
+        setCurrentBeach(JSON.parse(localStorage.getItem('itens')))
+    }, [])
 
 
   return (props.trigger) ? (

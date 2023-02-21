@@ -26,12 +26,10 @@ function App() {
     <div>
       <Header />
       <Introduction />
-      <Filter />
-      <h2 className='beach-list-title'>Praias de Florianópolis</h2>
-      {beach && <BeachList beach={beach} showedit={setShowPopupEdit} />}
+      <BeachList showedit={setShowPopupEdit} show={setShowPopup} />
       <AddBeach trigger={showPopup} setTrigger={setShowPopup} />
       <EditBeach trigger={showPopupEdit} setTrigger={setShowPopupEdit} />
-      <Footer show={setShowPopup} />
+
 
     </div>
   );
