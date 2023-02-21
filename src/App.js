@@ -12,25 +12,17 @@ function App() {
 
     const [showPopup, setShowPopup] = useState(false)
     const [showPopupEdit, setShowPopupEdit] = useState(false)
-    const [beach, setBeach] = useState([])
 
-    useEffect(() => {
-      document.addEventListener('localStorageUpdated', handleBeach, false)
-    }, [])
-
-    const handleBeach = () => {
-      setBeach(JSON.parse(localStorage.getItem('beach')))
-    }
 
   return (
     <div>
       <Header />
       <Introduction />
+      <h2>Praias de Florianópolis</h2>
       <BeachList showedit={setShowPopupEdit} show={setShowPopup} />
       <AddBeach trigger={showPopup} setTrigger={setShowPopup} />
       <EditBeach trigger={showPopupEdit} setTrigger={setShowPopupEdit} />
-
-
+      <Footer show={setShowPopup} />
     </div>
   );
 }

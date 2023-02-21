@@ -4,4 +4,12 @@ body{
   font-family: Oswald, Arial, Helvetica, sans-serif;
 }
 
+h2{
+  text-align: center;
+  font-size: 2.5em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #002844;
+}
+
 

@@ -7,7 +7,6 @@ const BeachList = (props) => {
     return(
         <div className="container-beachlist">
             <div className="beach-list">
-                <h2>Praias de Florianópolis</h2>
 
                 <div className="beach-item">
                     <p>Daniela</p>
@@ -37,12 +36,6 @@ const BeachList = (props) => {
                     </div>
                 </div>
             </div>
-
-            <div className="add-beach">
-            <p>Você conhece mais alguma praia que não está listada acima?</p>
-            <button onClick={() => props.show(true)} className="btn-show-popup">Adicionar</button>
-            </div>
-
 
         </div>
     )

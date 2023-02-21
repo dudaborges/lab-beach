@@ -7,18 +7,24 @@ function AddBeach(props) {
     const [area, setArea] = useState('')
     const [status, setStatus] = useState('')
     const [suitable, setSuitable] = useState('')
+    const [currentBeach, setCurrentBeach] = useState([])
 
 
     const handleAddBeach = e => {
         e.preventDefault()
+
+        const beach = [{
+            nome: name,
+            bairro: area, 
+            status: status,
+            acessibilidade: suitable
+        }]
+
+        localStorage.setItem('itens', JSON.stringify([...currentBeach, ...beach]))
         
-        setBeach([...beach])
-        localStorage.setItem("beach", JSON.stringify([...currentBeach, ...beach]))
-        const event = new Event('localStorageUpdated')
-        document.dispatchEvent(event)
-
-        localStorage.setItem('itens', JSON.stringify(beach))
-
+        setName('')
+        setArea('')
+        props.setTrigger(false)
     }
 
     useEffect(() =>{
@@ -44,11 +50,11 @@ function AddBeach(props) {
                     <span>Status:</span>
 
                     <div>
-                    <input onClick={(event) =>         setSuitable(event.target.value)
-                    } type="radio" id='suitable' name={suitable} value="Própria para Banho" />
+                    <input onClick={(event) =>         setStatus(event.target.value)
+                    } type="radio" id='suitable' name={status} value="Própria para Banho" />
                     <label htmlFor="suitable">Própria</label>
-                    <input onClick={(event) =>         setSuitable(event.target.value)
-                    }  type="radio" id="not-suitable" name={suitable} value="Imprópria para Banho" />
+                    <input onClick={(event) =>         setStatus(event.target.value)
+                    }  type="radio" id="not-suitable" name={status} value="Imprópria para Banho" />
                     <label htmlFor="not-suitable">Imprópria</label>
                     </div>
                 </div>
@@ -57,11 +63,11 @@ function AddBeach(props) {
                     <span>Acessível:</span>
 
                     <div>
-                    <input onClick={(event) => {        setStatus(event.target.value)
-                    }} type="radio" id="yes" name={status} value="Acessível" />
+                    <input onClick={(event) => {        setSuitable(event.target.value)
+                    }} type="radio" id="yes" name={suitable} value="Acessível" />
                     <label htmlFor="yes">Sim</label>
-                    <input onClick={(event) => {        setStatus(event.target.value)
-                    }} type="radio" id="no" name={status} value="Não Acessível" />
+                    <input onClick={(event) => {        setSuitable(event.target.value)
+                    }} type="radio" id="no" name={suitable} value="Não Acessível" />
                     <label htmlFor="no">Não</label>
                     </div>
                 </div>
@@ -69,7 +75,7 @@ function AddBeach(props) {
 
             <div className='btn-add'>
                 <button type='submit' className='btn'>Inserir</button>
-                <button className='btn' onClick={() => props.setTrigger(false)}>fechar</button>
+                <button type='button' className='btn' onClick={() => props.setTrigger(false)}>fechar</button>
             </div>
             {props.children}
         </form>
