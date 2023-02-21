@@ -1,38 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './AddBeach.css'
+import {v4 as uiidv4} from "uuid"
 
-function AddBeach(props) {
-
-    const [name, setName] = useState('')
-    const [area, setArea] = useState('')
-    const [status, setStatus] = useState('')
-    const [suitable, setSuitable] = useState('')
-    const [currentBeach, setCurrentBeach] = useState([])
-
+const AddBeach = ({trigger, setTrigger, name, setName, area, setArea, status, setStatus, suitable, setSuitable, currentBeach, setCurrentBeach}) => {
 
     const handleAddBeach = e => {
         e.preventDefault()
 
-        const beach = [{
-            nome: name,
-            bairro: area, 
-            status: status,
-            acessibilidade: suitable
-        }]
+        setCurrentBeach([...currentBeach, {id: uiidv4(), name: name, area: area}])
 
-        localStorage.setItem('itens', JSON.stringify([...currentBeach, ...beach]))
-        
         setName('')
         setArea('')
-        props.setTrigger(false)
+        setTrigger(false)
     }
 
-    useEffect(() =>{
-        setCurrentBeach(JSON.parse(localStorage.getItem('itens')))
-    }, [])
 
 
-  return (props.trigger) ? (
+  return (trigger) ? (
     <div className='container-addbeach'>
         <form className='addbeach' onSubmit={handleAddBeach}>
             <h3 className='title-popup'>Cadastrar uma nova praia</h3>
@@ -50,10 +34,10 @@ function AddBeach(props) {
                     <span>Status:</span>
 
                     <div>
-                    <input onClick={(event) =>         setStatus(event.target.value)
+                    <input onClick={(event) => setStatus(event.target.value)
                     } type="radio" id='suitable' name={status} value="Própria para Banho" />
                     <label htmlFor="suitable">Própria</label>
-                    <input onClick={(event) =>         setStatus(event.target.value)
+                    <input onClick={(event) => setStatus(event.target.value)
                     }  type="radio" id="not-suitable" name={status} value="Imprópria para Banho" />
                     <label htmlFor="not-suitable">Imprópria</label>
                     </div>
@@ -75,9 +59,8 @@ function AddBeach(props) {
 
             <div className='btn-add'>
                 <button type='submit' className='btn'>Inserir</button>
-                <button type='button' className='btn' onClick={() => props.setTrigger(false)}>fechar</button>
+                <button type='button' className='btn' onClick={() => setTrigger(false)}>fechar</button>
             </div>
-            {props.children}
         </form>
     </div>
   ) : ""

@@ -9,19 +9,52 @@ import Header from './components/Header';
 import Introduction from './components/Introduction';
 
 function App() {
+  const initialState = JSON.parse(localStorage.getItem("currentBeach")) || []
+    const [name, setName] = useState('')
+    const [area, setArea] = useState('')
+    const [status, setStatus] = useState('')
+    const [suitable, setSuitable] = useState('')
+    const [currentBeach, setCurrentBeach] = useState(initialState)
+    const [edit, setEdit] = useState(null)
+
+    useEffect(() => {
+      localStorage.setItem("currentBeach", JSON.stringify(currentBeach))
+    }, [currentBeach])
 
     const [showPopup, setShowPopup] = useState(false)
     const [showPopupEdit, setShowPopupEdit] = useState(false)
-
 
   return (
     <div>
       <Header />
       <Introduction />
       <h2>Praias de Florianópolis</h2>
-      <BeachList showedit={setShowPopupEdit} show={setShowPopup} />
-      <AddBeach trigger={showPopup} setTrigger={setShowPopup} />
-      <EditBeach trigger={showPopupEdit} setTrigger={setShowPopupEdit} />
+      <BeachList 
+      showedit={setShowPopupEdit} 
+      show={setShowPopup} 
+      currentBeach={currentBeach}
+      />
+
+      <AddBeach 
+      trigger={showPopup} 
+      setTrigger={setShowPopup}
+      name={name}
+      setName={setName}
+      area={area}
+      setArea={setArea}
+      status={status}
+      setStatus={setStatus}
+      suitable={suitable}
+      setSuitable={setSuitable}
+      currentBeach={currentBeach}
+      setCurrentBeach={setCurrentBeach}
+      />
+      
+      <EditBeach 
+      trigger={showPopupEdit} 
+      setTrigger={setShowPopupEdit} 
+      />
+
       <Footer show={setShowPopup} />
     </div>
   );
