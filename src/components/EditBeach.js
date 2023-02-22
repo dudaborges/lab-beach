@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './AddBeach.css'
 
 function EditBeach({trigger, setTrigger, currentBeach, setCurrentBeach, edit, setEdit, setName, setArea}) {
 
     const handleDelete = ({id}) => {
-        setCurrentBeach(currentBeach.filter((b) => b.id !== id))
-        setTrigger(false)
-        setEdit("")
+        if(window.confirm('Você tem certeza que deseja deletar?') === true) {
+            setCurrentBeach(currentBeach.filter((b) => b.id !== id))
+            setTrigger(false)
+            setEdit("")
+        }
+
     }
 
     const handleEdit = ({id}) => {
