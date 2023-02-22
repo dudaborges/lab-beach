@@ -53,6 +53,13 @@ function App() {
       <EditBeach 
       trigger={showPopupEdit} 
       setTrigger={setShowPopupEdit} 
+      currentBeach={currentBeach}
+      setCurrentBeach={setCurrentBeach}
+      edit={edit}
+      setEdit={setEdit}
+      setName={setName}
+      setArea={setArea}
+
       />
 
       <Footer show={setShowPopup} />

@@ -7,13 +7,14 @@ const AddBeach = ({trigger, setTrigger, name, setName, area, setArea, status, se
     const handleAddBeach = e => {
         e.preventDefault()
 
-        setCurrentBeach([...currentBeach, {id: uiidv4(), name: name, area: area}])
+        setCurrentBeach([...currentBeach, {id: uiidv4(), name: name, area: area, status: status}])
 
         setName('')
         setArea('')
         setTrigger(false)
     }
 
+    console.log(name, area, status)
 
 
   return (trigger) ? (
@@ -35,10 +36,10 @@ const AddBeach = ({trigger, setTrigger, name, setName, area, setArea, status, se
 
                     <div>
                     <input onClick={(event) => setStatus(event.target.value)
-                    } type="radio" id='suitable' name={status} value="Própria para Banho" />
+                    } type="radio" id='suitable' name={status} value="propria" onChange={(event) => setStatus(event.target.value)}/>
                     <label htmlFor="suitable">Própria</label>
                     <input onClick={(event) => setStatus(event.target.value)
-                    }  type="radio" id="not-suitable" name={status} value="Imprópria para Banho" />
+                    }  type="radio" id="not-suitable" name={status} value="impropria" onChange={(event) => setStatus(event.target.value)} />
                     <label htmlFor="not-suitable">Imprópria</label>
                     </div>
                 </div>
@@ -47,11 +48,11 @@ const AddBeach = ({trigger, setTrigger, name, setName, area, setArea, status, se
                     <span>Acessível:</span>
 
                     <div>
-                    <input onClick={(event) => {        setSuitable(event.target.value)
-                    }} type="radio" id="yes" name={suitable} value="Acessível" />
+                    <input onClick={(event) => { setSuitable(event.target.value)
+                    }} type="radio" id="yes" name={suitable} value="Acessível" onChange={(event) => setStatus(event.target.value)} />
                     <label htmlFor="yes">Sim</label>
-                    <input onClick={(event) => {        setSuitable(event.target.value)
-                    }} type="radio" id="no" name={suitable} value="Não Acessível" />
+                    <input onClick={(event) => { setSuitable(event.target.value)
+                    }} type="radio" id="no" name={suitable} value="Não Acessível" onChange={(event) => setStatus(event.target.value)} />
                     <label htmlFor="no">Não</label>
                     </div>
                 </div>
