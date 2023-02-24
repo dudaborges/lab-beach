@@ -5,6 +5,12 @@
     margin-top: 20px;
 }
 
+.container-filter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 .filter-grid{
     display: flex;
@@ -123,6 +129,10 @@
     cursor: pointer;
 }
 
+.filter-btn{
+    cursor: pointer;
+}
+
 
 
 @media (max-width: 1375px) and (min-width: 0px){
@@ -178,6 +188,14 @@
     .beach-list{
         width: 45%;
     }
+
+    .beach-list{
+        width: 60%;
+    }
+
+    
+
+
 }
 
 

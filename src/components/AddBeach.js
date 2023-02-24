@@ -40,7 +40,7 @@ const AddBeach = ({trigger, setTrigger, name, setName, area, setArea, status, se
                     <label htmlFor="suitable">Própria</label>
                     <input onClick={(event) => setStatus(event.target.value)
                     }  type="radio" id="not-suitable" name={status} value="impropria" onChange={(event) => setStatus(event.target.value)} />
-                    <label htmlFor="not-suitable">Imprópria</label>
+                    <label htmlFor="not-suitable" className='not-suitable'>Imprópria</label>
                     </div>
                 </div>
 

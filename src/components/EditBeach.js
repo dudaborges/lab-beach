@@ -37,7 +37,7 @@ function EditBeach({trigger, setTrigger, currentBeach, setCurrentBeach, edit, se
                         <span>Status:</span>
     
                         <div>
-                        <input type="radio" id='suitable' name='status' />
+                        <input type="radio" id='suitable' name='status' value={b.status} />
                         <label htmlFor="suitable">Própria</label>
                         <input type="radio" id="not-suitable" name='status' />
                         <label htmlFor="not-suitable">Imprópria</label>

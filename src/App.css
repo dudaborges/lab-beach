@@ -10,6 +10,7 @@ h2{
   margin-top: 20px;
   margin-bottom: 20px;
   color: #002844;
+  box-sizing: border-box;
 }
 
 

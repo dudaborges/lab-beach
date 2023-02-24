@@ -10,8 +10,6 @@ const BeachList = ({currentBeach, showedit}) => {
             {
                 currentBeach.map((b) => {
                     return(
-
-
                         <div className="beach-list">
                             <div className="beach-item" key={b.id}>
                                 <p>{b.name}</p>
@@ -23,8 +21,6 @@ const BeachList = ({currentBeach, showedit}) => {
                                 </div>
                             </div>
                         </div>
-
-                        
                     )
                 })
             }

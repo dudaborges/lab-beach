@@ -29,6 +29,7 @@ function App() {
       <Header />
       <Introduction />
       <h2>Praias de Florianópolis</h2>
+      <Filter />
       <BeachList 
       showedit={setShowPopupEdit} 
       show={setShowPopup} 

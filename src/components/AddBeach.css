@@ -19,6 +19,8 @@
     border-radius: 20px;
 }
 
+
+
 .inputs-add{
     display: flex;
     flex-direction: column;
@@ -38,10 +40,12 @@
     margin-bottom: 7px;
     border: 3px solid #0388A6;
     border-radius: 5px;
+    width: 70%;
 }
 
 .status-input{
     display: flex;
+    justify-content: space-between;
     margin-top: 10px;
 }
 
@@ -55,6 +59,10 @@
 
 .status-input label{
     margin-right: 10px;
+}
+
+label.not-suitable{
+    margin-right: 0;
 }
 
 .title-popup{
@@ -89,4 +97,10 @@
 
 .accessible{
     margin-bottom: 15px;
+}
+
+@media (max-width: 740px){
+    .inputs-add{
+        width: 80%;
+    }
 }

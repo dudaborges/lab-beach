@@ -2,6 +2,7 @@ import React from 'react'
 
 const Filter = () => {
   return (
+    <div className='container-filter'>
     <div className="filter-grid">
         <div className="filter">
             <p>Filtro:</p>
@@ -25,9 +26,9 @@ const Filter = () => {
                 </div>
             </div>
         </div>
-
-    <button>Filtrar</button>
-</div>
+        <button className='filter-btn'>Filtrar</button>
+    </div>
+    </div>
   )
 }
 
