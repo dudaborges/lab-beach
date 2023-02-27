@@ -12,10 +12,7 @@ const AddBeach = ({trigger, setTrigger, name, setName, area, setArea, status, se
         setName('')
         setArea('')
         setTrigger(false)
-    }
-
-    console.log(name, area, status, suitable)
-    
+    }    
 
 
   return (trigger) ? (

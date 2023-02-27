@@ -8,6 +8,7 @@ const BeachList = ({currentBeach, showedit, editItem}) => {
         <div className="container-beachlist">
             {
                 currentBeach.map((b) => {
+                    
                     return(
                         <div className="beach-list">
                             <div className="beach-item" key={b.id}>
