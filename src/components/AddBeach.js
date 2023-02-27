@@ -14,7 +14,7 @@ const AddBeach = ({trigger, setTrigger, name, setName, area, setArea, status, se
         setTrigger(false)
     }
 
-    console.log(name, area, status)
+    console.log(name, area, status, suitable)
     
 
 
@@ -36,9 +36,9 @@ const AddBeach = ({trigger, setTrigger, name, setName, area, setArea, status, se
                     <span>Status:</span>
 
                     <div>
-                    <input onClick={(event) => setStatus(event.target.value)} type="radio" id='suitable' name={status} value="Própria" />
+                    <input onClick={(event) => setStatus(event.target.value)} type="radio" id='suitable' name={status} value="Própria para banho" />
                     <label htmlFor="suitable">Própria</label>
-                    <input onClick={(event) => setStatus(event.target.value)}  type="radio" id="not-suitable" name={status} value="Imprópria" />
+                    <input onClick={(event) => setStatus(event.target.value)}  type="radio" id="not-suitable" name={status} value="Imprópria para banho" />
                     <label htmlFor="not-suitable" className='not-suitable'>Imprópria</label>
                     </div>
                 </div>
@@ -47,9 +47,9 @@ const AddBeach = ({trigger, setTrigger, name, setName, area, setArea, status, se
                     <span>Acessível:</span>
 
                     <div>
-                    <input onClick={(event) => { setSuitable(event.target.value)}} type="radio" id="yes" name={suitable} value="Acessível" />
+                    <input onClick={(event) => { setSuitable(event.target.value)}} type="radio" id="yes" name={suitable} value="Sim" />
                     <label htmlFor="yes">Sim</label>
-                    <input onClick={(event) => { setSuitable(event.target.value)}} type="radio" id="no" name={suitable} value="Não Acessível" />
+                    <input onClick={(event) => { setSuitable(event.target.value)}} type="radio" id="no" name={suitable} value="Não" />
                     <label htmlFor="no">Não</label>
                     </div>
                 </div>

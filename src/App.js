@@ -15,7 +15,8 @@ function App() {
     const [status, setStatus] = useState('')
     const [suitable, setSuitable] = useState('')
     const [currentBeach, setCurrentBeach] = useState(initialState)
-    const [edit, setEdit] = useState(null)
+    const [editID, setEditID] = useState(null)
+
 
     useEffect(() => {
       localStorage.setItem("currentBeach", JSON.stringify(currentBeach))
@@ -23,6 +24,15 @@ function App() {
 
     const [showPopup, setShowPopup] = useState(false)
     const [showPopupEdit, setShowPopupEdit] = useState(false)
+
+    const editItem = (id) => {
+      const editItem = currentBeach.find((b) => b.id === id)
+      setEditID(id)
+      setName(editItem.name)
+      setArea(editItem.area)
+      setStatus(editItem.status)
+      setSuitable(editItem.suitable)
+    }  
 
   return (
     <div>
@@ -34,6 +44,7 @@ function App() {
       showedit={setShowPopupEdit} 
       show={setShowPopup} 
       currentBeach={currentBeach}
+      editItem={editItem}
       />
 
       <AddBeach 
@@ -56,11 +67,16 @@ function App() {
       setTrigger={setShowPopupEdit} 
       currentBeach={currentBeach}
       setCurrentBeach={setCurrentBeach}
-      edit={edit}
-      setEdit={setEdit}
+      name={name}
       setName={setName}
+      area={area}
       setArea={setArea}
-
+      status={status}
+      setStatus={setStatus}
+      suitable={suitable}
+      setSuitable={setSuitable}
+      editID={editID}
+      setEditID={setEditID}
       />
 
       <Footer show={setShowPopup} />

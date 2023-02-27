@@ -10,19 +10,19 @@ const Filter = () => {
             <div className="check-list">
                 <div>
                     <input type="checkbox" id="accessible" name="accessible" />
-                    <label for="accessible">Acessíveis</label>
+                    <label htmlFor="accessible">Acessíveis</label>
                 </div>
                 <div>
                     <input type="checkbox" id="not-accessible" name="not-accessible" />
-                    <label for="not-accessible">Não Acessíveis</label>
+                    <label htmlFor="not-accessible">Não Acessíveis</label>
                 </div>
                 <div>
                     <input type="checkbox" id="suitable" name="suitable" />
-                    <label for="suitable">Próprias Para Banho</label>
+                    <label htmlFor="suitable">Próprias Para Banho</label>
                 </div>
                 <div>
                     <input type="checkbox" id="not-suitable" name="not-suitable" />
-                    <label for="not-suitable">Impróprias Para Banho</label>
+                    <label htmlFor="not-suitable">Impróprias Para Banho</label>
                 </div>
             </div>
         </div>

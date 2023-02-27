@@ -61,6 +61,10 @@
     margin-right: 10px;
 }
 
+.change-column{
+    background-color: #00c8ff44;
+}
+
 label.not-suitable{
     margin-right: 0;
 }
@@ -79,6 +83,7 @@ label.not-suitable{
     display: flex;
     justify-content: flex-end;
     width: 100%;
+    margin-top: 15px;
 }
 
 .btn{
@@ -89,6 +94,10 @@ label.not-suitable{
     border-radius: 3px;
     margin-right: 5px;
     cursor: pointer;
+}
+
+.value-radio{
+    margin-right: 5px;
 }
 
 .delete{
